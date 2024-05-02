@@ -10,8 +10,8 @@ public class TradingApplication {
     IStockerBrockerDriver driver;
 
     public TradingApplication() {
-
     }
+
 
     public TradingApplication(IStockerBrockerDriver driver) {
         this.driver = driver;
