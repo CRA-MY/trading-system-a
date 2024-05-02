@@ -30,5 +30,6 @@ public class AutoTradingSystem {
         int firstPrice = tradingApplication.currentPrice(stockCode);
         int secondPrice = tradingApplication.currentPrice(stockCode);
         return firstPrice > secondPrice;
+
     }
 }
