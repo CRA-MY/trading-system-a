@@ -1,3 +1,4 @@
+import driver.IStockerBrockerDriver;
 
 class DriverNotFoundException extends RuntimeException {
     public DriverNotFoundException(String msg) {
@@ -6,13 +7,13 @@ class DriverNotFoundException extends RuntimeException {
 }
 
 public class TradingApplication {
-    StockerBrockerDriver driver;
+    IStockerBrockerDriver driver;
 
     public TradingApplication() {
 
     }
 
-    public TradingApplication(StockerBrockerDriver driver) {
+    public TradingApplication(IStockerBrockerDriver driver) {
         this.driver = driver;
     }
 
@@ -21,7 +22,7 @@ public class TradingApplication {
             throw new DriverNotFoundException("DRIVER NOT FOUND");
     }
 
-    public void selectStockBrocker(StockerBrockerDriver driver) {
+    public void selectStockBrocker(IStockerBrockerDriver driver) {
         this.driver = driver;
     }
 
