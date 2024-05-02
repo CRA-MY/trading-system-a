@@ -8,7 +8,7 @@ public interface IStockerBrockerDriver {
     void buy();
 
     // 판매
-    void sell();void sellingStock();
+    void sell();
 
             // 가격확인
     int getPrice();
