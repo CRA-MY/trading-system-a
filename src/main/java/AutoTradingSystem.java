@@ -5,7 +5,7 @@ public class AutoTradingSystem {
         this.tradingApplication = tradingApplication;
     }
 
-    public void buyNiceTiming(String stockCode, int price) {
+    public void buyNiceTiming(String stockCode, int price) throws InterruptedException {
         int maximumStock = 30; //최대 수량 가정
         if (isIncreasing(stockCode)) {
             tradingApplication.buy(stockCode, maximumStock, price); //종목코드, 수량, 가격
@@ -13,20 +13,20 @@ public class AutoTradingSystem {
 
     }
 
-    private static boolean isIncreasing(String stockCode) {
+    private static boolean isIncreasing(String stockCode) throws InterruptedException {
         int firstPrice = tradingApplication.currentPrice(stockCode);
         int secondPrice = tradingApplication.currentPrice(stockCode);
         return firstPrice < secondPrice;
     }
 
-    public void sellNiceTiming(String stockCode, int stockCount) {
+    public void sellNiceTiming(String stockCode, int stockCount) throws InterruptedException {
         if (isDecreasing(stockCode)) {
             tradingApplication.sell(stockCode, stockCount, tradingApplication.currentPrice(stockCode)); //종목코드, 수량, 가격
         }
 
     }
 
-    private static boolean isDecreasing(String stockCode) {
+    private static boolean isDecreasing(String stockCode) throws InterruptedException {
         int firstPrice = tradingApplication.currentPrice(stockCode);
         int secondPrice = tradingApplication.currentPrice(stockCode);
         return firstPrice > secondPrice;

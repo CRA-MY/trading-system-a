@@ -26,7 +26,7 @@ class AutoTradingSystemTest {
     }
 
     @Test
-    void 가격이올라가는추세면구매_SUCCESS() {
+    void 가격이올라가는추세면구매_SUCCESS() throws InterruptedException {
 
 
         when(tradingApplication.currentPrice(stockCode)).thenReturn(10).thenReturn(20);
@@ -38,7 +38,7 @@ class AutoTradingSystemTest {
     }
 
     @Test
-    void 가격이올라가는추세면구매_FAIL() {
+    void 가격이올라가는추세면구매_FAIL() throws InterruptedException {
         AutoTradingSystem autoTradingSystem = new AutoTradingSystem(tradingApplication);
         String stockCode = "Naver";
         int price = 3000;
@@ -52,7 +52,7 @@ class AutoTradingSystemTest {
     }
 
     @Test
-    void 가격이내려가는추세면판매_SUCCESS() {
+    void 가격이내려가는추세면판매_SUCCESS() throws InterruptedException {
         when(tradingApplication.currentPrice(stockCode)).thenReturn(20).thenReturn(10).thenReturn(10);
 
         autoTradingSystem.sellNiceTiming(stockCode,stockCount);
@@ -62,7 +62,7 @@ class AutoTradingSystemTest {
     }
 
     @Test
-    void 가격이내려가는추세면판매_FAIL() {
+    void 가격이내려가는추세면판매_FAIL() throws InterruptedException {
         when(tradingApplication.currentPrice(stockCode)).thenReturn(10).thenReturn(20).thenReturn(10);
 
         autoTradingSystem.sellNiceTiming(stockCode,stockCount);

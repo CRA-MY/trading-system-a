@@ -11,6 +11,6 @@ public interface IStockerBrockerDriver {
     void sell(String stockCode , int count , int price);
 
     // 가격확인
-    int getPrice(String stockCode);
+    int getPrice(String stockCode) throws InterruptedException;
 
 }
