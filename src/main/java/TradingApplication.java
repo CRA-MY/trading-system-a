@@ -41,7 +41,7 @@ public class TradingApplication {
         driver.sell(stockCode, price, count);
     }
 
-    public int currentPrice(String stockCode) {
+    public int currentPrice(String stockCode) throws InterruptedException {
         checkDriver();
         return driver.getPrice(stockCode);
     }
