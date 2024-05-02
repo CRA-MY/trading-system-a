@@ -1,5 +1,6 @@
 package driver;
 
+import api.KiwerAPI;
 import api.NemoAPI;
 
 public class StockerBrockerDriverNemo implements IStockerBrockerDriver {
@@ -7,6 +8,10 @@ public class StockerBrockerDriverNemo implements IStockerBrockerDriver {
 
     public StockerBrockerDriverNemo() {
         this.api = new NemoAPI();
+    }
+
+    public StockerBrockerDriverNemo(NemoAPI neo) {
+        this.api = neo;
     }
 
     public void login( String ID, String Password) {
@@ -21,7 +26,7 @@ public class StockerBrockerDriverNemo implements IStockerBrockerDriver {
         api.sellingStock(stockCode, count, price);
     }
 
-    public int currentPrice ( String stockCode) throws InterruptedException {
+    public int getPrice ( String stockCode) throws InterruptedException {
         return api.getMarketPrice(stockCode, 0);
     }
 }

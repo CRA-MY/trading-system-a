@@ -25,7 +25,7 @@ public class StockerBrockerDriverKiwer implements IStockerBrockerDriver {
         api.sell(stockCode, count, price);
     }
 
-    public int currentPrice ( String stockCode) {
+    public int getPrice ( String stockCode) {
         return api.currentPrice(stockCode);
     }
 }
