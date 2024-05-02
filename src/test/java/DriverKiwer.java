@@ -13,8 +13,7 @@ class DriverKiwer {
 
     @Test
     void 키워증권선택() {
-        StockerBrockerDriverKiwer stockerBrockerDriverKiwer = new StockerBrockerDriverKiwer(kiwer);
-        stockerBrockerDriverKiwer.
+
     }
 
     @Test
